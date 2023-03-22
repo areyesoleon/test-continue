@@ -2,7 +2,7 @@
 WORKDIR /src
 EXPOSE 6050
 EXPOSE 80
-COPY test.csproj .
+COPY ./test/test.csproj .
 RUN dotnet restore "test.csproj"
 COPY . .
 RUN dotnet publish "test.csproj" -c Release -o /publish
