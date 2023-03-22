@@ -5,7 +5,7 @@ EXPOSE 80
 COPY ./test/test.csproj .
 RUN dotnet restore "test.csproj"
 COPY . .
-RUN dotnet publish "test.csproj" -c Release -o /publish
+RUN dotnet publish ./test/test.csproj -c Release -o /publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 as final
 WORKDIR /app
